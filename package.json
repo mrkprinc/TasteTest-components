@@ -1,0 +1,12 @@
+{
+  "name": "taste-test",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": "https://github.com/larry1010/taste-test.git",
+  "author": "mrkprinc <36653433+mrkprinc@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  }
+}
