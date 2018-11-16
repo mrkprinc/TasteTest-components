@@ -1,0 +1,36 @@
+body {
+    background: grey;
+}
+
+header {
+    text-align: center;
+}
+
+#logo-title {
+    font-family: 'Ultra', serif;
+    font-size: 100px;
+    margin: 0px;
+    color: pink;
+    /* -webkit-text-stroke: 1px #022A3A; */
+    -webkit-text-stroke: .5px white;
+}
+
+.site-container {
+    text-align: center;
+}
+
+#logo {
+    max-width: 20%;
+    max-height: 20%;
+}
+
+#sketch {
+    border-style: solid;
+    border-width: 5px;
+    max-width: 50%;
+    max-height: 50%;
+}
+
+footer {
+    text-align: center;
+}
