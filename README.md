@@ -4,3 +4,5 @@
 # resources
 * https://larry1010.github.io/taste-test/
 * https://github.com/larry1010/taste-test
+
+(Nov 15 2018 v.001)
