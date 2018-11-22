@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Logo from './Logo';
+import Module from './Module';
+import '../assets/css/reset.css';
+import '../assets/css/App.css';
 
-class App extends Component {
+
+class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Taste-Test</h1>
+        <header>This is Taste-Test.</header>
+        <Logo />
+        <Module />
       </div>
     );
   }

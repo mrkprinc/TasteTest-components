@@ -1,0 +1,26 @@
+@import '../global.scss';
+
+html {
+  min-height: 100%;
+}
+
+body {
+  @extend %cover;
+  @extend %centerXY;
+  margin: 0;
+
+  font-size: $em;
+  color: $black;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: $standard-padding;
+  font-size: $em + $small;
+  @extend %heading;
+  @include dark($grey);
+}
