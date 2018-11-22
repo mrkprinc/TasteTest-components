@@ -3,7 +3,9 @@ import React, { Component } from 'react';
 class App extends Component {
   render() {
     return (
-      <div>This is Taste-Test.</div>
+      <div>
+        <h1>Taste-Test</h1>
+      </div>
     );
   }
 }
