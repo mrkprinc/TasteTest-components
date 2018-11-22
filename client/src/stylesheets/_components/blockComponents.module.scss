@@ -1,0 +1,35 @@
+@import '../global.scss';
+
+.container {
+  position: relative;
+  @include standard-border($grey);
+  padding: $standard-padding;
+  padding-top: $em * 4;
+
+  & > * {
+    margin-bottom: $small * 2;
+  }
+
+  header {
+    position: absolute;
+  }
+
+  h1 {
+    @extend %heading;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      margin: $small 0;
+    }
+
+    input, textarea {
+      font-size: inherit;
+      font-family: inherit;
+      padding: $em / 4;
+    }
+  }
+}
