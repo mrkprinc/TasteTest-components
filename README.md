@@ -14,6 +14,9 @@ Nov 15 2018 v.001
 
 # credits
 
+Spaghetti Image
+* https://pixabay.com/en/spaghetti-meatballs-pasta-lunch-745469/
+
 Birthday cake free icon
 * Icon made by Freepik from www.flaticon.com 
 * https://www.flaticon.com/free-icon/birthday-cake_184374
