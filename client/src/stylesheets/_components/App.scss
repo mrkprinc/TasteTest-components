@@ -6,7 +6,8 @@ html {
 
 body {
   @extend %cover;
-  @extend %centerXY;
+  @extend %centerCol;
+  padding-top: $em * 3;
   margin: 0;
 
   font-size: $em;

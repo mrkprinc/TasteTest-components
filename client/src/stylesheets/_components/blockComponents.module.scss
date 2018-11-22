@@ -12,10 +12,17 @@
 
   header {
     position: absolute;
+    cursor: default;
   }
 
   h1 {
     @extend %heading;
+  }
+
+  .imgWrapper {
+    overflow: hidden;
+    @extend %centerXY;
+    @include standard-border($translucent-grey);
   }
 
   form {

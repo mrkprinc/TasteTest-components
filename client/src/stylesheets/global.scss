@@ -24,16 +24,22 @@ $standard-padding: $small * 3 $em;
   right: 0;
 }
 
-%evenX {
+%evenRow {
   display: flex;
   justify-content: space-evenly;
+}
+
+%centerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 %centerXY {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 %heading {
