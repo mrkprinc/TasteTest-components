@@ -8,6 +8,10 @@ Nov 15 2018 v.001
 * https://github.com/larry1010/taste-test
 
 
+# react-collapsible modules
+* https://www.npmjs.com/package/react-collapsible
+
+
 # credits
 
 Birthday cake free icon
