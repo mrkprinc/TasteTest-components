@@ -1,0 +1,19 @@
+@import '../global.scss';
+
+.container {
+  position: relative;
+  @include standard-border($grey);
+
+  .heading {
+    @extend %heading;
+    padding: $standard-padding;
+    cursor: pointer;
+  }
+
+  .content {
+    padding: $standard-padding;
+    & > * {
+      margin-bottom: $small * 2;
+    }
+  }
+}

@@ -24,3 +24,11 @@ header {
   @extend %heading;
   @include dark($grey);
 }
+
+main {
+  max-width: 95%;
+  margin: 0 auto;
+  & > * {
+    margin: $em 0;
+  }
+}

@@ -38,6 +38,7 @@ $standard-padding: $small * 3 $em;
 
 %heading {
   color: $grey;
+  background-color: $translucent-grey;
   font-weight: bolder;
   letter-spacing: 2px;
   white-space: nowrap;
