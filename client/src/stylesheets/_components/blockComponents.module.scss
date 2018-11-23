@@ -10,13 +10,9 @@
     margin-bottom: $small * 2;
   }
 
-  header {
-    position: absolute;
-    cursor: default;
-  }
-
   h1 {
     @extend %heading;
+    background-color: transparent; 
   }
 
   .imgWrapper {
@@ -36,7 +32,7 @@
     input, textarea {
       font-size: inherit;
       font-family: inherit;
-      padding: $em / 4;
+      padding: $small;
     }
   }
 }

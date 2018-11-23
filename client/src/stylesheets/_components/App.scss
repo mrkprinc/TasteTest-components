@@ -6,24 +6,34 @@ html {
 
 body {
   @extend %cover;
-  @extend %centerCol;
-  padding-top: $em * 3;
+  top: $em * 4;
   margin: 0;
 
   font-size: $em;
   color: $black;
 }
 
+#root, #root > div {
+  @extend %cover;
+  @extend %centerCol;
+}
+
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   text-align: center;
   padding: $standard-padding;
   font-size: $em + $small;
+  cursor: default;
   @extend %heading;
   @include dark($grey);
+}
+
+.mainHeader {
+  position: fixed;
+  z-index: 10;
 }
 
 main {

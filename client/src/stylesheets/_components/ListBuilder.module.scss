@@ -3,4 +3,44 @@
 .container {
   background-color: $translucent-grey;
   padding: $standard-padding;
+
+  .itemField {
+    display: flex;
+    align-items: center;
+    margin-bottom: $small;
+
+    & > * {
+      padding: $small;
+    }
+
+    .listNumber {
+      @extend %centerXY;
+    }
+
+    .itemText {
+      flex: 1;
+      padding: $small;
+      background-color: $light;
+      border: 2px solid transparent;
+      cursor: default;
+    }
+
+    .newLineButton {
+      @extend .listNumber;
+      width: 14px;
+      border: 2px solid transparent;
+      margin-left: 2px;
+      background-color: $grey;
+      color: $white;
+      cursor: pointer;
+    }
+  }
+
+  .addItemField {
+    @extend .itemField;
+
+    input {
+      flex: 1;
+    }
+  }
 }

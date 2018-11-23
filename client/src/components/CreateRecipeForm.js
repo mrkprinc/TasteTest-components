@@ -4,7 +4,7 @@ import { ListBuilder, types } from './ListBuilder';
 
 const CreateRecipeForm = props => {
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       <header>
         Start a New Recipe
       </header>

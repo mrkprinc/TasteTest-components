@@ -5,12 +5,12 @@ import image1 from '../images/spaghetti.jpg';
 
 const DisplayRecipe = props => {
   return (
-    <div class={styles.container}>
+    <div className={styles.container}>
       <header>
         Spaghetti and Meatballs
       </header>
 
-      <div class={styles.imgWrapper}>
+      <div className={styles.imgWrapper}>
         <img width={320} height={240} alt="spaghetti and meatballs" src={image1} />
       </div>
 
