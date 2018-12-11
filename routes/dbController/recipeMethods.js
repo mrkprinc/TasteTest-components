@@ -9,9 +9,17 @@ module.exports = {
       })
     })
   },
-  createNew: dataObj => {
+  getOne: () => {
     return new Promise((resolve, reject) => {
-      db.Recipe.create(dataObj, (err, newRecipe) => {
+      db.Recipe.findOne({ active: true }, (err, result) => {
+        if(err) reject(err.message);
+        resolve(result);
+      })
+    })
+  },
+  createNew: ({ name, description }) => {
+    return new Promise((resolve, reject) => {
+      db.Recipe.create({ name, description }, (err, newRecipe) => {
         if(err) reject(err.message);
         resolve(newRecipe);
       })

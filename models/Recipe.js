@@ -5,11 +5,9 @@ const RecipeSchema = new mongoose.Schema({
   name: String,
   description: String,
   createdAt: {type: Date, default: Date.now},
-  createdByUserId: ObjId,
-  variations: [{type: ObjId, ref: 'Variation'}],
+  versions: [{type: ObjId, ref: 'Version'}],
   active: {type: Boolean, default: true}
 })
 
 const Recipe = mongoose.model('Recipe', RecipeSchema);
-
 module.exports = Recipe;

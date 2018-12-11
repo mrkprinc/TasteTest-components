@@ -1,10 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const { ApolloServer } = require('apollo-server-express');
+const { schema, resolvers } = require('./routes/graphQL/index');
 const mongoose = require('mongoose');
 
 const routes = require('./routes');
 const app = express();
 const PORT = process.env.PORT || 8080;
+
+const server = new ApolloServer({ typeDefs: schema, resolvers });
+server.applyMiddleware({ app, path: '/graphql' });
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
