@@ -8,6 +8,7 @@ module.exports = {
       id: String
       name: String
       description: String
+      topVersion: Version
       versions: [Version]
     }
     type Version {

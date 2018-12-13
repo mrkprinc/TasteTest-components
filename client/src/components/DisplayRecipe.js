@@ -4,7 +4,8 @@ import styles from '../assets/css/blockComponents.module.css';
 import image1 from '../images/spaghetti.jpg';
 
 const DisplayRecipe = props => {
-  let displayVersion = props.versions[0];
+  console.log('-------------')
+  console.log(props)
 
   return (
     <div className={styles.container}>
@@ -23,7 +24,7 @@ const DisplayRecipe = props => {
       <div>
         <Collapsible heading='Ingredients'>
           <ol>
-            {displayVersion.ingredients.map((ing, i) => {
+            {props.topVersion.ingredients.map((ing, i) => {
               return <li key={i}>{ing}</li>
             })}
           </ol>
@@ -33,7 +34,7 @@ const DisplayRecipe = props => {
       <div>
         <Collapsible heading='Instructions'>
           <ol>
-            {displayVersion.instructions.map((ins, i) => {
+            {props.topVersion.instructions.map((ins, i) => {
               return <li key={i}>{ins}</li>
             })}
           </ol>

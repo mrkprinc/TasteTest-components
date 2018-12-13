@@ -2,6 +2,9 @@ const db = require('../dbController');
 
 module.exports = {
   Recipe: {
+    topVersion: recipe => {
+      return db.version.getOne(recipe.id)
+    },
     versions: recipe => {
       return db.version.getAllByRecipe(recipe.id);
     }

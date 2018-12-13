@@ -10,7 +10,7 @@ const DisplayRecipeContainer = () => {
       getOneRecipe {
         name
         description
-        versions {
+        topVersion {
           ingredients
           instructions
         }
