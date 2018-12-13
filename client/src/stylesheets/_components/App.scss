@@ -40,6 +40,9 @@ header {
 main {
   width: 95%;
   max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0 auto;
   
   display: flex;
@@ -67,4 +70,11 @@ ol, ul {
 textarea {
   width: 100%;
   box-sizing: border-box;
+} 
+
+.clickableNumber {
+  background-color: yellow;
+  cursor: pointer;
+  padding: 6px;
+  margin: 2px;
 }
