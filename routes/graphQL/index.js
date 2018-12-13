@@ -9,23 +9,21 @@ module.exports = {
       name: String
       description: String
       versions: [Version]
-      variables: [Variable]
-      score: Float
     }
     type Version {
       id: String
       ingredients: [String]
       instructions: [String]
     }
-    type Variable {
-      name: String
-      value: Float
-      unit: String
-    }
 
     input RecipeInput {
       name: String,
       description: String
+    }
+    input VersionInput {
+      ingredients: [String],
+      instructions: [String],
+      recipeId: String
     }
 
     type Query {
@@ -35,6 +33,7 @@ module.exports = {
 
     type Mutation {
       createRecipe(input: RecipeInput): Recipe
+      createVersion(input: VersionInput): Version
     }
   `
 }

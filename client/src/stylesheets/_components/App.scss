@@ -10,6 +10,7 @@ body {
   margin: 0;
 
   font-size: $em;
+  font-family: Arial, Helvetica, sans-serif;
   color: $black;
 }
 
@@ -26,6 +27,7 @@ header {
   text-align: center;
   padding: $standard-padding;
   font-size: $em + $small;
+  font-weight: normal;
   cursor: default;
   @extend %heading;
   @include dark($grey);
@@ -41,5 +43,13 @@ main {
   margin: 0 auto;
   & > * {
     margin: $em 0;
+  }
+}
+
+ol {
+  list-style: decimal inside;
+
+  & > li {
+    margin: 2 * $small 0;
   }
 }

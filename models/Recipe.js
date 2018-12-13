@@ -5,7 +5,6 @@ const RecipeSchema = new mongoose.Schema({
   name: String,
   description: String,
   createdAt: {type: Date, default: Date.now},
-  versions: [{type: ObjId, ref: 'Version'}],
   active: {type: Boolean, default: true}
 })
 
