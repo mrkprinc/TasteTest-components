@@ -43,4 +43,15 @@
       padding: $small;
     }
   }
+
+  .arrowBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      font-size: $em * 2;
+      cursor: pointer;
+    }
+  }
 }

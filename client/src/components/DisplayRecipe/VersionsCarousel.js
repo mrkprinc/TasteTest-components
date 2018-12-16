@@ -1,5 +1,7 @@
 import React from 'react';
 import DisplayVersion from './DisplayVersion.js';
+import styles from '../../assets/css/blockComponents.module.css';
+import { LeftArrow, RightArrow } from './Arrows.js';
 
 class VersionsCarousel extends React.Component {
   constructor(props) {
@@ -10,9 +12,30 @@ class VersionsCarousel extends React.Component {
     }
   }
 
+  leftClick() {
+    let currentIndex = this.state.currentIndex - 1;
+    if(currentIndex > -1) this.setState({ currentIndex });
+  }
+
+  rightClick() {
+    let currentIndex = this.state.currentIndex + 1;
+    if(currentIndex < this.versions.length) this.setState({ currentIndex });
+  }
+
   render() {
     return (
-      <DisplayVersion {...this.versions[this.state.currentIndex]} />
+      <div>
+        <DisplayVersion {...this.versions[this.state.currentIndex]} />
+        <div className={styles.arrowBar}>
+          <LeftArrow 
+            onClick={() => this.leftClick()} 
+          />
+          
+          <RightArrow 
+            onClick={() => this.rightClick()} 
+          />
+        </div>
+      </div>
     )
   }
 }

@@ -1,6 +1,7 @@
 import React from 'react';
 import DisplayVersion from './DisplayVersion';
 import VersionsCarouselContainer from '../../containers/VersionsCarouselContainer';
+import { RightArrow } from './Arrows';
 import styles from '../../assets/css/blockComponents.module.css';
 
 class DisplayRecipe extends React.Component {
@@ -29,7 +30,13 @@ class DisplayRecipe extends React.Component {
         }
         
         {!this.state.loadVersions && this.recipe.moreVersions.count > 0 && (
-          <div onClick={() => this.setState({loadVersions: true})}>Show more versions</div>
+          <div 
+            className={styles.arrowBar}
+            onClick={() => this.setState({loadVersions: true})}
+          >
+            Show more versions
+            <RightArrow onClick={null} />
+          </div>
         )}
       </div>
     )

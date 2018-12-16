@@ -4,6 +4,9 @@ $grey: rgb(119, 119, 119);
 $translucent-grey: rgba(119, 119, 119, 0.3);
 $black: #333;
 
+$blue: #9beedd;
+$pink: #ee9bac;
+
 $em: 16px;
 $small: 4px;
 $standard-padding: $small * 3 $em;
@@ -45,7 +48,7 @@ $standard-padding: $small * 3 $em;
 
 %heading {
   color: $grey;
-  background-color: $translucent-grey;
+  background-color: $blue;
   font-weight: bolder;
   letter-spacing: 2px;
   white-space: nowrap;
