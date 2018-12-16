@@ -3,21 +3,31 @@ const { DatabaseError } = require('../../errors');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
-  getAllByRecipe: recipeId => {
-    return new Promise((resolve, reject) => {
-      db.Version
-        .find({ recipe: new ObjectId(recipeId) }, (err, results) => {
-          if(err) reject(err.message);
-          resolve(results);
-        })
-    })
-  },
   getOne: recipeId => {
     return new Promise((resolve, reject) => {
       db.Version
-        .findOne({ recipe: new ObjectId(recipeId) }, (err, result) => {
+        .find({ recipe: new ObjectId(recipeId) })
+        .sort({ createdAt: -1 })
+        .limit(1)
+        .exec((err, results) => {
           if(err) reject(err.message);
-          resolve(result);
+          resolve(results[0]);
+        })
+    })
+  },
+  getMore: recipeId => {
+    return new Promise((resolve, reject) => {
+      db.Version
+        .find({ recipe: new ObjectId(recipeId) })
+        .sort({ createdAt: -1 })
+        .skip(1)
+        .limit(20)
+        .exec((err, results) => {
+          if(err) reject(err.message);
+          resolve({
+            count: results.length,
+            versions: results
+          });
         })
     })
   },

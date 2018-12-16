@@ -9,6 +9,10 @@ module.exports = {
       name: String
       description: String
       topVersion: Version
+      moreVersions: MoreVersions
+    }
+    type MoreVersions {
+      count: Int
       versions: [Version]
     }
     type Version {

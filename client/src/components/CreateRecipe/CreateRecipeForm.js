@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../assets/css/blockComponents.module.css';
+import styles from '../../assets/css/blockComponents.module.css';
 import { ListBuilder, types } from './ListBuilder';
 
 const CreateRecipeForm = props => {

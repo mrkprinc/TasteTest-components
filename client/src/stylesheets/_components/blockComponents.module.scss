@@ -10,6 +10,14 @@
     margin-bottom: $small * 4;
   }
 
+  section {
+    margin-bottom: $em * 2;
+
+    & > * {
+      margin: $small
+    }
+  }
+
   h1 {
     @extend %heading;
     background-color: transparent; 

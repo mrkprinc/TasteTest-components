@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../assets/css/ListBuilder.module.css';
+import styles from '../../assets/css/ListBuilder.module.css';
 
 export const types = {
   ingredients: 'ingredients',

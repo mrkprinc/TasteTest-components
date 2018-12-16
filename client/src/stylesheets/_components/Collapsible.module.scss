@@ -2,6 +2,7 @@
 
 .container {
   position: relative;
+  background-color: $white;
   @include standard-border($grey);
 
   .heading {

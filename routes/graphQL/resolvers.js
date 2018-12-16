@@ -5,8 +5,8 @@ module.exports = {
     topVersion: recipe => {
       return db.version.getOne(recipe.id)
     },
-    versions: recipe => {
-      return db.version.getAllByRecipe(recipe.id);
+    moreVersions: recipe => {
+      return db.version.getMore(recipe.id);
     }
   },
   Query: {

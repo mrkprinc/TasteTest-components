@@ -1,7 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
 import DisplayRecipeContainer from '../containers/DisplayRecipeContainer';
-import CreateRecipeForm from './CreateRecipeForm';
 import '../assets/css/reset.css';
 import '../assets/css/App.css';
 
@@ -14,7 +13,6 @@ class App extends React.Component {
         <main>
           <Logo />     
           <DisplayRecipeContainer />
-          <CreateRecipeForm/>
         </main>
       </div>
     );
