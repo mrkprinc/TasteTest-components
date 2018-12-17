@@ -1,6 +1,6 @@
 import React from 'react';
 import Logo from './Logo';
-import DisplayRecipeContainer from '../containers/DisplayRecipeContainer';
+import RecipeList from './ListRecipes/RecipeList';
 import '../assets/css/reset.css';
 import '../assets/css/App.css';
 
@@ -11,8 +11,8 @@ class App extends React.Component {
       <div>
         <header className='mainHeader'>This is Taste-Test.</header>
         <main>
-          <Logo />     
-          <DisplayRecipeContainer />
+          <Logo /> 
+          <RecipeList />    
         </main>
       </div>
     );

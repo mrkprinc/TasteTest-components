@@ -3,10 +3,11 @@ import QueryContainer from './QueryContainer';
 import DisplayRecipe from '../components/DisplayRecipe/DisplayRecipe';
 
 
-const DisplayRecipeContainer = () => {
+const DisplayRecipeContainer = props => {
   const query = gql`
     {
-      getOneRecipe {
+      getOneRecipe(id: "${props.id}") {
+        id
         name
         description
         topVersion {

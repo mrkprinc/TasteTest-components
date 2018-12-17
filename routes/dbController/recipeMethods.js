@@ -1,4 +1,5 @@
 const db = require('../../models');
+const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
   getAll: () => {
@@ -9,9 +10,9 @@ module.exports = {
       })
     })
   },
-  getOne: () => {
+  getOne: recipeId => {
     return new Promise((resolve, reject) => {
-      db.Recipe.findOne({ active: true }, (err, result) => {
+      db.Recipe.findById(new ObjectId(recipeId), (err, result) => {
         if(err) reject(err.message);
         resolve(result);
       })

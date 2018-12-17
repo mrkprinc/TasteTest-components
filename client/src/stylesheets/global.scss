@@ -10,9 +10,10 @@ $pink: #ee9bac;
 $em: 16px;
 $small: 4px;
 $standard-padding: $small * 3 $em;
+$border-width: 2px;
 
 @mixin standard-border($color) {
-  border: 2px solid $color;
+  border: $border-width solid $color;
 }
 
 @mixin dark($backColor) {

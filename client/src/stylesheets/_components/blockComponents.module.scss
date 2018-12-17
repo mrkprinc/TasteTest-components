@@ -1,7 +1,10 @@
 @import '../global.scss';
 
 .container {
+  box-sizing: border-box;
+  width: 100%;
   position: relative;
+  
   @include standard-border($grey);
   padding: $standard-padding;
   padding-top: $em * 4;
@@ -41,17 +44,6 @@
       font-size: inherit;
       font-family: inherit;
       padding: $small;
-    }
-  }
-
-  .arrowBar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    span {
-      font-size: $em * 2;
-      cursor: pointer;
     }
   }
 }

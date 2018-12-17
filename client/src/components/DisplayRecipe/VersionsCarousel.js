@@ -1,6 +1,6 @@
 import React from 'react';
 import DisplayVersion from './DisplayVersion.js';
-import styles from '../../assets/css/blockComponents.module.css';
+import styles from '../../assets/css/DisplayRecipe.module.css';
 import { LeftArrow, RightArrow } from './Arrows.js';
 
 class VersionsCarousel extends React.Component {

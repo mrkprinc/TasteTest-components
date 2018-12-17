@@ -1,0 +1,42 @@
+@import '../global.scss';
+
+.arrowBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  svg {
+    margin: 0 $small
+  }
+}
+
+.arrow {
+  fill: $white; 
+  stroke: $black; 
+  stroke-width: $border-width;
+}
+
+.fallback {
+  font-size: $em * 3;
+}
+
+.recipeListItem {
+  @include standard-border($grey);
+  display: flex;
+  cursor: pointer;
+  padding: $border-width;
+
+  & > * {
+    padding: $small *2;
+  }
+
+  strong {
+    @extend %heading;
+    flex: 1
+  }
+
+  .description {
+    flex: 2
+  }
+}

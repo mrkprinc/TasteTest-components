@@ -25,17 +25,13 @@ class DisplayRecipe extends React.Component {
         </div>
 
         {this.state.loadVersions ? 
-          <VersionsCarouselContainer /> :
+          <VersionsCarouselContainer id={this.recipe.id} /> :
           <DisplayVersion {...this.recipe.topVersion} />
         }
         
         {!this.state.loadVersions && this.recipe.moreVersions.count > 0 && (
-          <div 
-            className={styles.arrowBar}
-            onClick={() => this.setState({loadVersions: true})}
-          >
-            Show more versions
-            <RightArrow onClick={null} />
+          <div onClick={() => this.setState({loadVersions: true})}>
+            <RightArrow onClick={null}>Show more versions</RightArrow>
           </div>
         )}
       </div>

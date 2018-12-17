@@ -2,7 +2,7 @@ import React from 'react';
 import { Query } from 'react-apollo';
 import Loading from '../components/Loading';
 
-const QueryContainer = (query, ChildComponent) => {
+const QueryContainer = (query, ChildComponent, props) => {
   return (
     <Query query={query}>
       {({loading, error, data}) => {
@@ -12,7 +12,7 @@ const QueryContainer = (query, ChildComponent) => {
           console.log(error);
           return <div style={{textAlign: 'center'}}>There was an error!</div>
         } else {
-          return <ChildComponent {...data} />
+          return <ChildComponent {...data} {...props} />
         }
       }}
     </Query>

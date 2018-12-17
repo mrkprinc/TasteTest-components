@@ -6,15 +6,15 @@ module.exports = {
       return db.version.getOne(recipe.id)
     },
     moreVersions: recipe => {
-      return db.version.getMore(recipe.id);
+      return db.version.getMore(recipe.id)
     }
   },
   Query: {
     getAllRecipes: () => {
       return db.recipe.getAll()
     },
-    getOneRecipe: () => {
-      return db.recipe.getOne()
+    getOneRecipe: (_, { id }) => {
+      return db.recipe.getOne(id);
     }
   },
   Mutation: {

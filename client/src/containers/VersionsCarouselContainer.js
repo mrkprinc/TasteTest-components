@@ -5,7 +5,8 @@ import VersionsCarousel from '../components/DisplayRecipe/VersionsCarousel';
 const VersionsCarouselContainer = props => {
   const query = gql`
     {
-      getOneRecipe {
+      getOneRecipe(id: "${props.id}") {
+        id
         topVersion {
           ingredients
           instructions

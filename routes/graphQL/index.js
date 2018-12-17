@@ -33,7 +33,7 @@ module.exports = {
 
     type Query {
       getAllRecipes: [Recipe!]
-      getOneRecipe: Recipe!
+      getOneRecipe(id: String): Recipe!
     }
 
     type Mutation {
