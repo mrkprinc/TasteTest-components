@@ -1,5 +1,9 @@
 @import '../global.scss';
 
+.versionsWrapper {
+  min-height: 100px;
+}
+
 .arrowBar {
   display: flex;
   justify-content: center;

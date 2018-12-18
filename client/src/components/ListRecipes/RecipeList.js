@@ -1,8 +1,6 @@
 import React from 'react';
-import QueryContainer from '../../containers/QueryContainer';
-import RecipeListItems from './RecipeListItems';
+import RecipeListItemsContainer from '../../containers/RecipeListItemsContainer';
 import DisplayRecipeContainer from '../../containers/DisplayRecipeContainer';
-import gql from 'graphql-tag';
 import styles from '../../assets/css/blockComponents.module.css';
 
 class RecipeList extends React.Component {
@@ -18,22 +16,16 @@ class RecipeList extends React.Component {
   }
 
   render() {
-    const query = gql`
-      {
-        getAllRecipes {
-          id
-          name
-          description
-        }
-      }
-    `
 
     return (
       <div>
         <div className={styles.container}>
           <header>Select a recipe: </header>
           <ul>
-            {QueryContainer(query, RecipeListItems, { selectRecipe: id => this.selectRecipe(id) })}
+            <RecipeListItemsContainer 
+              selectRecipe={id => this.selectRecipe(id)} 
+              limit={this.props.limit} 
+            />
           </ul>
         </div>
 

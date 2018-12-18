@@ -12,7 +12,7 @@ class App extends React.Component {
         <header className='mainHeader'>This is Taste-Test.</header>
         <main>
           <Logo /> 
-          <RecipeList />    
+          <RecipeList limit={3} />    
         </main>
       </div>
     );

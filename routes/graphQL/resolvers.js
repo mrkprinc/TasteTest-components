@@ -10,8 +10,8 @@ module.exports = {
     }
   },
   Query: {
-    getAllRecipes: () => {
-      return db.recipe.getAll()
+    getAllRecipes: (_, { limit }) => {
+      return db.recipe.getAll(limit)
     },
     getOneRecipe: (_, { id }) => {
       return db.recipe.getOne(id);

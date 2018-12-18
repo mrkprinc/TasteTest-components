@@ -2,7 +2,8 @@ import React from 'react';
 import DisplayVersion from './DisplayVersion';
 import VersionsCarouselContainer from '../../containers/VersionsCarouselContainer';
 import { RightArrow } from './Arrows';
-import styles from '../../assets/css/blockComponents.module.css';
+import { container } from '../../assets/css/blockComponents.module.css';
+import styles from '../../assets/css/DisplayRecipe.module.css';
 
 class DisplayRecipe extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class DisplayRecipe extends React.Component {
 
   render() {
     return (
-      <div className={styles.container}>
+      <div className={container}>
         <header>
           {this.recipe.name}
         </header>
@@ -24,10 +25,12 @@ class DisplayRecipe extends React.Component {
           <p>{this.recipe.description}</p>
         </div>
 
-        {this.state.loadVersions ? 
-          <VersionsCarouselContainer id={this.recipe.id} /> :
-          <DisplayVersion {...this.recipe.topVersion} />
-        }
+        <div className={styles.versionsWrapper}>
+          {this.state.loadVersions ? 
+            <VersionsCarouselContainer id={this.recipe.id} /> :
+            <DisplayVersion {...this.recipe.topVersion} />
+          }        
+        </div>
         
         {!this.state.loadVersions && this.recipe.moreVersions.count > 0 && (
           <div onClick={() => this.setState({loadVersions: true})}>

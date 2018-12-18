@@ -2,9 +2,13 @@ const db = require('../../models');
 const ObjectId = require('mongoose').Types.ObjectId;
 
 module.exports = {
-  getAll: () => {
+  getAll: optionalLimit => {
     return new Promise((resolve, reject) => {
-      db.Recipe.find({ active: true }, (err, results) => {
+      let query = db.Recipe
+        .find({ active: true })
+        .sort({createdAt: -1})
+      if(optionalLimit) query.limit(optionalLimit);
+      query.exec((err, results) => {
         if(err) reject(err.message);
         resolve(results);
       })

@@ -32,7 +32,7 @@ module.exports = {
     }
 
     type Query {
-      getAllRecipes: [Recipe!]
+      getAllRecipes(limit: Int): [Recipe!]
       getOneRecipe(id: String): Recipe!
     }
 
