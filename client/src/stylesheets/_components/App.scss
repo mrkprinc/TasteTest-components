@@ -63,3 +63,8 @@ ol, ul {
     padding: $small;
   }
 }
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
