@@ -10,7 +10,7 @@ const ClickableNumbers = props => {
     if(match) {
       return [
         <span key={++keys}>{str.slice(0, match.index)}</span>, 
-        <span key={++keys} className='clickableNumber' onClick={() => console.log(match[0])}>{match}</span>, 
+        <span key={++keys} className='clickableNumber' onClick={() => console.log('boo')}>{match}</span>, 
         replace(str.slice(regex.lastIndex))
       ]
     } else return <span key={++keys}>{str}</span>;

@@ -7,8 +7,8 @@ export const types = {
 }
 
 export class ListBuilder extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       textInput: '',
       listItems: []
@@ -40,7 +40,9 @@ export class ListBuilder extends React.Component {
           return (
             <div className={styles.itemField} key={i} >
               <span className={styles.listNumber}>{i + 1}. </span>
+
               <span className={styles.itemText}>{item.displayText}</span>
+
               <button className={styles.newLineButton} onClick={e => this.removeItem(i)}>X</button>
             </div>
           )

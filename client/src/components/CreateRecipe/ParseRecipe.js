@@ -1,5 +1,5 @@
 import React from 'react';
-import { container as blockComponent } from '../../assets/css/blockComponents.module.css';
+import { container as blockComponent } from '../../assets/css/DisplayRecipe.module.css';
 import styles from '../../assets/css/ListBuilder.module.css';
 
 class ParseRecipe extends React.Component {

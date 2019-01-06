@@ -1,7 +1,7 @@
 import React from 'react';
 import RecipeListItemsContainer from '../../containers/RecipeListItemsContainer';
 import DisplayRecipeContainer from '../../containers/DisplayRecipeContainer';
-import styles from '../../assets/css/blockComponents.module.css';
+import styles from '../../assets/css/DisplayRecipe.module.css';
 
 class RecipeList extends React.Component {
   constructor() {

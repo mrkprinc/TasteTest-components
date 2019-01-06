@@ -1,0 +1,14 @@
+@import '../_groups/forms.module.scss';
+
+.container {
+  background-color: $orange;
+
+  .addItemField {
+    flex-direction: row;
+    margin-bottom: 0;
+
+    & > * {
+      margin-right: $small
+    }
+  }
+}

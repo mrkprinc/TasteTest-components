@@ -2,7 +2,6 @@ import React from 'react';
 import DisplayVersion from './DisplayVersion';
 import VersionsCarouselContainer from '../../containers/VersionsCarouselContainer';
 import { RightArrow } from './Arrows';
-import { container } from '../../assets/css/blockComponents.module.css';
 import styles from '../../assets/css/DisplayRecipe.module.css';
 
 class DisplayRecipe extends React.Component {
@@ -16,7 +15,7 @@ class DisplayRecipe extends React.Component {
 
   render() {
     return (
-      <div className={container}>
+      <div className={styles.container}>
         <header>
           {this.recipe.name}
         </header>
