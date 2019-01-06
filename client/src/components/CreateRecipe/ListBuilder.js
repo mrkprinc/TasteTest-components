@@ -1,18 +1,11 @@
 import React from 'react';
+import ClickableNumbers from '../ClickableNumbers';
 import styles from '../../assets/css/ListBuilder.module.css';
-
-export const types = {
-  ingredients: 'ingredients',
-  instructions: 'instructions'
-}
 
 export class ListBuilder extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      textInput: '',
-      listItems: []
-    }
+    this.state = props.context[props.field]
   }
 
   handleSubmit(e) {
@@ -30,7 +23,7 @@ export class ListBuilder extends React.Component {
   removeItem(i) {
     let listItems = [...this.state.listItems];
     listItems.splice(i, 1);
-    this.setState({ listItems })
+    this.setState({ listItems });
   }
 
   render() {
@@ -41,7 +34,9 @@ export class ListBuilder extends React.Component {
             <div className={styles.itemField} key={i} >
               <span className={styles.listNumber}>{i + 1}. </span>
 
-              <span className={styles.itemText}>{item.displayText}</span>
+              <span className={styles.itemText}>
+                <ClickableNumbers string={item.displayText} />
+              </span>
 
               <button className={styles.newLineButton} onClick={e => this.removeItem(i)}>X</button>
             </div>
