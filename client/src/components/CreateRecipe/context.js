@@ -19,7 +19,7 @@ export class NewRecipeContext extends React.Component {
         variableInput: {
           description: '',
           value: 0,
-          unit: ''
+          unit: -1
         },
         listItems: []
       },

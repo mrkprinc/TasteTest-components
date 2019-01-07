@@ -31,19 +31,4 @@
     @extend %centerXY;
     @include standard-border($translucent-grey);
   }
-
-  form {
-    display: flex;
-    flex-direction: column;
-
-    & > * {
-      margin: $small 0;
-    }
-
-    input, textarea {
-      font-size: inherit;
-      font-family: inherit;
-      padding: $small;
-    }
-  }
 }

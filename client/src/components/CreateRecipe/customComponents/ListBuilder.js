@@ -21,9 +21,10 @@ class ListBuilder extends React.Component {
   }
 
   removeItem(i) {
-    let listItems = [...this.state.listItems];
-    listItems.splice(i, 1);
-    this.setState({ listItems });
+    this.setState(state => {
+      state.listItems.splice(i, 1);
+      return state;
+    })
   }
 
   render() {

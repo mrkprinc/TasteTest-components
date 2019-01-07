@@ -7,10 +7,6 @@
     flex-direction: row;
     margin-bottom: 0;
 
-    & > * {
-      margin: 0 $small
-    }
-
     .description {
       flex: 3;
     }

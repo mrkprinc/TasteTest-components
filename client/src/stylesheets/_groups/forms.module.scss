@@ -1,5 +1,31 @@
 @import '../global.scss';
 
+%input {
+  font-size: inherit;
+  font-family: inherit;
+  padding: $small;
+  border: 1px inset $translucent-grey;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: $small 0;
+  }
+
+  input, select, textarea {
+    @extend %input;
+  }
+}
+
+button {
+  @extend %input;
+  border-radius: $small;
+  cursor: pointer;
+}
+
 .container {
   padding: $standard-padding;
 
@@ -9,7 +35,7 @@
     margin-bottom: $small;
 
     & > * {
-      padding: $small;
+      margin: 0 $small;
     }
 
     .listNumber {
