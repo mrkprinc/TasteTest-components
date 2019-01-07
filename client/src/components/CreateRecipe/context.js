@@ -16,7 +16,11 @@ export class NewRecipeContext extends React.Component {
       name: '',
       description: '',
       ingredients: {
-        textInput: '',
+        variableInput: {
+          description: '',
+          value: 0,
+          unit: ''
+        },
         listItems: []
       },
       instructions: {

@@ -2,7 +2,7 @@ import React from 'react';
 import ClickableNumbers from '../../ClickableNumbers';
 import styles from '../../../assets/css/ListBuilder.module.css';
 
-export class ListBuilder extends React.Component {
+class ListBuilder extends React.Component {
   constructor(props) {
     super(props);
     this.state = props.context[props.field]
@@ -11,11 +11,11 @@ export class ListBuilder extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.textInput.length > 0) {
-      let currentItems = this.state.listItems;
-      let displayText = this.state.textInput;
-      this.setState({ 
-        listItems: [...currentItems, { displayText }],
-        textInput: ''
+      this.setState(state => {
+        return {
+          listItems: [...state.listItems, { displayText: state.textInput }],
+          textInput: ''
+        }
       })
     }
   }
@@ -58,3 +58,5 @@ export class ListBuilder extends React.Component {
     )
   }
 }
+
+export default ListBuilder;
