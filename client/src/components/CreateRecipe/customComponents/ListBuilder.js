@@ -1,6 +1,6 @@
 import React from 'react';
-import ClickableNumbers from '../ClickableNumbers';
-import styles from '../../assets/css/ListBuilder.module.css';
+import ClickableNumbers from '../../ClickableNumbers';
+import styles from '../../../assets/css/ListBuilder.module.css';
 
 export class ListBuilder extends React.Component {
   constructor(props) {

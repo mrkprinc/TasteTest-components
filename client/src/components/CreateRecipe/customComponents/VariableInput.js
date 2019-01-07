@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../assets/css/VariableInput.module.css';
+import styles from '../../../assets/css/VariableInput.module.css';
 
 class VariableInput extends React.Component {
   constructor(props) {
