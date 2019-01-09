@@ -7,7 +7,7 @@ const QueryContainer = (query, ChildComponent, props) => {
     <Query query={query}>
       {({loading, error, data}) => {
         if(loading) {
-          return <Loading />;
+          return <Loading text='Loading' />;
         } else if(error) {
           console.log(error);
           return <div style={{textAlign: 'center'}}>There was an error!</div>
@@ -19,4 +19,4 @@ const QueryContainer = (query, ChildComponent, props) => {
   )
 }
 
-export default QueryContainer
+export default QueryContainer;

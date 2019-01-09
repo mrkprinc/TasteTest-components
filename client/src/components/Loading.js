@@ -1,13 +1,13 @@
 import React from 'react';
 
-const Loading = () => {
+const Loading = props => {
   return (
     <div style={{
       textAlign: 'center',
       padding: '4px',
       borderRadius: '4px',
       backgroundColor: '#ee9bac'
-    }}>Loading data...</div>
+    }}>{props.text}</div>
   )
 }
 

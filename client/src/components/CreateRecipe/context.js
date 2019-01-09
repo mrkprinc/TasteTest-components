@@ -9,27 +9,54 @@ export const fields = {
   instructions: 'instructions'
 }
 
+const initialState = {
+  name: '',
+  description: '',
+  ingredients: {
+    variableInput: {
+      description: '',
+      value: '',
+      unit: -1
+    },
+    listItems: []
+  },
+  instructions: {
+    textInput: '',
+    listItems: []
+  }
+}
+
 export class NewRecipeContext extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: '',
-      description: '',
-      ingredients: {
-        variableInput: {
-          description: '',
-          value: 0,
-          unit: -1
-        },
-        listItems: []
+      ...initialState,
+      update: (value, ...field) => {
+        this.setState(state => {
+          let changeField = state;
+          for(let i = 0; i < field.length - 1; i++) {
+            changeField = changeField[field[i]];
+          }
+          changeField[field[field.length - 1]] = value;
+          return state;
+        })
       },
-      instructions: {
-        textInput: '',
-        listItems: []
+
+      push: (value, ...field) => {
+        this.setState(state => {
+          let changeField = state;
+          for(let i = 0; i < field.length; i++) {
+            changeField = changeField[field[i]];
+          }
+          changeField.push(value);
+          return state;
+        })
       },
-  
-      update: (field, value) => {
-        this.setState({ [field]: value }, () => console.log(this.state));
+
+      clear: () => {
+        this.setState(state => {
+          return Object.assign(state, initialState);
+        })
       }
     }
   }

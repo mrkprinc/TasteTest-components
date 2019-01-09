@@ -6,7 +6,12 @@ const CreateRecipeButton = props => {
     <context.Consumer>
       {context => {
         return (
-          <button>Create Recipe</button>
+          <button onClick={e => {
+            props.onClick(context);
+            context.clear();
+          }}>
+            Create Recipe
+          </button>
         )
       }}
     </context.Consumer>

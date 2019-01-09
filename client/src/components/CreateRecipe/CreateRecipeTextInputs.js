@@ -10,13 +10,13 @@ const CreateRecipeTextInputs = props => {
             <input 
               type='text' placeholder='Recipe Name' 
               value={context.name}
-              onChange={e => context.update(fields.name, e.target.value)}
+              onChange={e => context.update(e.target.value, fields.name)}
             />
 
             <textarea 
               placeholder='Description' 
               value={context.description}
-              onChange={e => context.update(fields.description, e.target.value)}
+              onChange={e => context.update(e.target.value, fields.description)}
             />
           </form>
         )

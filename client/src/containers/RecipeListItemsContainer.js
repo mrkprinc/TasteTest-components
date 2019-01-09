@@ -1,32 +1,11 @@
-import gql from 'graphql-tag';
 import QueryContainer from './QueryContainer';
 import RecipeListItems from '../components/ListRecipes/RecipeListItems';
+import { recipeListQuery } from '../queries/queries';
 
 
 const RecipeListItemsContainer = props => {
-  const query = 
-    props.limit ?
-    gql`
-      {
-        getAllRecipes(limit: ${props.limit}) {
-          id
-          name
-          description
-        }
-      }
-    ` :
-    gql`
-      {
-        getAllRecipes {
-          id
-          name
-          description
-        }
-      }
-    `
-
   return (
-    QueryContainer(query, RecipeListItems, { selectRecipe: props.selectRecipe })
+    QueryContainer(recipeListQuery, RecipeListItems, { selectRecipe: props.selectRecipe })
   )
 }
 

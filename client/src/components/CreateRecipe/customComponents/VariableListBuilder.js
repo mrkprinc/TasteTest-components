@@ -11,20 +11,15 @@ class VariableListBuilder extends React.Component {
     e.preventDefault();
     const { description, value, unit } = this.state.variableInput
     if(description.length > 0 && value > 0 && unit !== -1) {
-      this.setState(state => {
-        return {
-          listItems: [...state.listItems, { description, value, unit }],
-          variableInput: { description: '', value: null, unit: -1 }
-        }
-      })
+      this.props.context.push({ description, value, unit }, this.props.field, 'listItems');
+      this.props.context.update({ description: '', value: '', unit: -1 }, this.props.field, 'variableInput');
     }
   }
 
   removeItem(i) {
-    this.setState(state => {
-      state.listItems.splice(i, 1);
-      return state;
-    })
+    const newList = [...this.state.listItems];
+    newList.splice(i, 1);
+    this.props.context.update(newList, this.props.field, 'listItems');
   }
 
   render() {
@@ -49,10 +44,7 @@ class VariableListBuilder extends React.Component {
             value={this.state.variableInput.description}
             onChange={e => {
               const val = e.target.value;
-              this.setState(state => {
-                state.variableInput.description = val;
-                return state;
-              })
+              this.props.context.update(val, this.props.field, 'variableInput', 'description');
             }}
           />
 
@@ -60,11 +52,8 @@ class VariableListBuilder extends React.Component {
             type='text' placeholder='Number'
             value={this.state.variableInput.value}
             onChange={e => {
-              const val = e.target.value;
-              this.setState(state => {
-                state.variableInput.value = val.replace(/\D/g, '');
-                return state;
-              })
+              const val = e.target.value.replace(/\D/, '');
+              this.props.context.update(val, this.props.field, 'variableInput', 'value');
             }}
           />
 
@@ -72,10 +61,7 @@ class VariableListBuilder extends React.Component {
             value={this.state.variableInput.unit}
             onChange={e => {
               const val = e.target.value;
-              this.setState(state => {
-                state.variableInput.unit = val;
-                return state;
-              })
+              this.props.context.update(val, this.props.field, 'variableInput', 'unit');
             }}
           >
             <option value={-1}>Select</option>

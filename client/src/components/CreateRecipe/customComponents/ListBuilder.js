@@ -5,26 +5,21 @@ import styles from '../../../assets/css/ListBuilder.module.css';
 class ListBuilder extends React.Component {
   constructor(props) {
     super(props);
-    this.state = props.context[props.field]
+    this.state = this.props.context[this.props.field];
   }
 
   handleSubmit(e) {
     e.preventDefault();
     if(this.state.textInput.length > 0) {
-      this.setState(state => {
-        return {
-          listItems: [...state.listItems, { displayText: state.textInput }],
-          textInput: ''
-        }
-      })
+      this.props.context.push({ displayText: this.state.textInput }, this.props.field, 'listItems');
+      this.props.context.update('', this.props.field, 'textInput');
     }
   }
 
   removeItem(i) {
-    this.setState(state => {
-      state.listItems.splice(i, 1);
-      return state;
-    })
+    const newList = [...this.state.listItems];
+    newList.splice(i, 1);
+    this.props.context.update(newList, this.props.field, 'listItems');
   }
 
   render() {
@@ -50,7 +45,10 @@ class ListBuilder extends React.Component {
             <input 
               type='text' placeholder='Next item' 
               value={this.state.textInput}
-              onChange={e => this.setState({ textInput: e.target.value })}
+              onChange={e => {
+                const val = e.target.value;
+                this.props.context.update(val, this.props.field, 'textInput');
+              }}
             />
             <button type='submit' className={styles.newLineButton}>↩</button>
           </div>

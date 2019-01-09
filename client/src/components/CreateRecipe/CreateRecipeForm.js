@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../../assets/css/DisplayRecipe.module.css';
-import { CreateRecipeListInputs, CreateRecipeTextInputs, CreateRecipeButton } from '.';
+import { CreateRecipeListInputs, CreateRecipeTextInputs } from '.';
+import CreateRecipeButtonContainer from '../../containers/CreateRecipeButtonContainer';
 import { NewRecipeContext } from './context';
 
 const CreateRecipeForm = props => {
@@ -15,7 +16,7 @@ const CreateRecipeForm = props => {
         
         <CreateRecipeListInputs />
 
-        <CreateRecipeButton />
+        <CreateRecipeButtonContainer />
       </div>
     </NewRecipeContext>
   )
